@@ -7,13 +7,25 @@
 //
 
 #import "ViewController.h"
-
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
 
+-(void)sample{
+    
+}
+
+-(void)seg1:(NSString *)string seg2:(NSUInteger)num{
+    
+    
+    
+}
+
+- (void)xxxxxx{
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.

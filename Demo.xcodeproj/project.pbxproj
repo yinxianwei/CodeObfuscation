@@ -14,6 +14,8 @@
 		D079E7E91A67C53D00AEFD6A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D079E7E81A67C53D00AEFD6A /* Images.xcassets */; };
 		D079E7EC1A67C53D00AEFD6A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D079E7EA1A67C53D00AEFD6A /* LaunchScreen.xib */; };
 		D079E7F81A67C53D00AEFD6A /* DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D079E7F71A67C53D00AEFD6A /* DemoTests.m */; };
+		D079E80C1A67C79700AEFD6A /* confuse.sh in Resources */ = {isa = PBXBuildFile; fileRef = D079E80A1A67C79700AEFD6A /* confuse.sh */; };
+		D079E80D1A67C79700AEFD6A /* func.list in Resources */ = {isa = PBXBuildFile; fileRef = D079E80B1A67C79700AEFD6A /* func.list */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		D079E7F11A67C53D00AEFD6A /* DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D079E7F61A67C53D00AEFD6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D079E7F71A67C53D00AEFD6A /* DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoTests.m; sourceTree = "<group>"; };
+		D079E8011A67C57500AEFD6A /* codeObfuscation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = codeObfuscation.h; sourceTree = "<group>"; };
+		D079E8041A67C5A400AEFD6A /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		D079E80A1A67C79700AEFD6A /* confuse.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = confuse.sh; sourceTree = SOURCE_ROOT; };
+		D079E80B1A67C79700AEFD6A /* func.list */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = func.list; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +87,13 @@
 		D079E7DA1A67C53D00AEFD6A /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				D079E80A1A67C79700AEFD6A /* confuse.sh */,
+				D079E80B1A67C79700AEFD6A /* func.list */,
 				D079E7DF1A67C53D00AEFD6A /* AppDelegate.h */,
 				D079E7E01A67C53D00AEFD6A /* AppDelegate.m */,
 				D079E7E21A67C53D00AEFD6A /* ViewController.h */,
 				D079E7E31A67C53D00AEFD6A /* ViewController.m */,
+				D079E8011A67C57500AEFD6A /* codeObfuscation.h */,
 				D079E7E51A67C53D00AEFD6A /* Main.storyboard */,
 				D079E7E81A67C53D00AEFD6A /* Images.xcassets */,
 				D079E7EA1A67C53D00AEFD6A /* LaunchScreen.xib */,
@@ -98,6 +107,7 @@
 			children = (
 				D079E7DC1A67C53D00AEFD6A /* Info.plist */,
 				D079E7DD1A67C53D00AEFD6A /* main.m */,
+				D079E8041A67C5A400AEFD6A /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -129,6 +139,7 @@
 				D079E7D41A67C53D00AEFD6A /* Sources */,
 				D079E7D51A67C53D00AEFD6A /* Frameworks */,
 				D079E7D61A67C53D00AEFD6A /* Resources */,
+				D079E8051A67C63D00AEFD6A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -200,7 +211,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D079E7E71A67C53D00AEFD6A /* Main.storyboard in Resources */,
+				D079E80D1A67C79700AEFD6A /* func.list in Resources */,
 				D079E7EC1A67C53D00AEFD6A /* LaunchScreen.xib in Resources */,
+				D079E80C1A67C79700AEFD6A /* confuse.sh in Resources */,
 				D079E7E91A67C53D00AEFD6A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,6 +226,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D079E8051A67C63D00AEFD6A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = $PROJECT_DIR/confuse.sh;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D079E7D41A67C53D00AEFD6A /* Sources */ = {
@@ -343,9 +372,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xianwei Yin (KMB2736RMD)";
+				GCC_PREFIX_HEADER = $PROJECT_DIR/$PROJECT_NAME/PrefixHeader.pch;
 				INFOPLIST_FILE = Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "81cfb67e-1c95-4f8e-9eb0-6d1956c38448";
 			};
 			name = Debug;
 		};
@@ -353,9 +387,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xianwei Yin (KMB2736RMD)";
+				GCC_PREFIX_HEADER = $PROJECT_DIR/$PROJECT_NAME/PrefixHeader.pch;
 				INFOPLIST_FILE = Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "81cfb67e-1c95-4f8e-9eb0-6d1956c38448";
 			};
 			name = Release;
 		};

@@ -1,0 +1,16 @@
+//
+//  Header.pch
+//  代码混淆
+//
+//  Created by 尹现伟 on 15-1-15.
+//  Copyright (c) 2015年 DNE Technology Co.,Ltd. All rights reserved.
+//
+
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#import "codeObfuscation.h"
+
+#endif
